@@ -11,6 +11,7 @@ const Search = ({ search, setSearch }: SearchProps) => {
     <div className={style.search}>
       <input
         className={style.search__searchBar}
+        placeholder='Pesquisar...'
         value={search}
         onChange={(event) => setSearch(event.target.value)}
       />
