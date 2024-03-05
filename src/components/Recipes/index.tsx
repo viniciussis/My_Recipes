@@ -12,32 +12,30 @@ interface RecipeProps {
 const Recipes = ({ search, sort, tag }: RecipeProps) => {
   const [recipeList, setRecipeList] = useState(recipes)
 
-  console.log(tag, search, sort)
-
-  function filterBySearch(title: string) {
-    const regex = new RegExp(search, 'i')
-    return regex.test(title)
-  }
-
-  function filterByTag(tagSelected: null | number) {
-    if (tag !== null) return tagSelected === tag
-    return true
-  }
-
-  function orderBySort(newList: typeof recipes) {
-    switch (sort.toLowerCase()) {
-      case 'porção':
-        return newList.sort((x, y) => x.size > y.size ? 1 : -1)
-      case 'qtd. pessoas':
-        return newList.sort((x, y) => x.serving > y.serving ? 1 : -1)
-      case 'preço':
-        return newList.sort((x, y) => x.price > y.price ? 1 : -1)
-      default:
-        return newList
-    }
-  }
-
   useEffect(() => {
+    function filterBySearch(title: string) {
+      const regex = new RegExp(search, 'i')
+      return regex.test(title)
+    }
+
+    function filterByTag(tagSelected: null | number) {
+      if (tag !== null) return tagSelected === tag
+      return true
+    }
+
+    function orderBySort(newList: typeof recipes) {
+      switch (sort.toLowerCase()) {
+        case 'porção':
+          return newList.sort((x, y) => (x.size > y.size ? 1 : -1))
+        case 'qtd. pessoas':
+          return newList.sort((x, y) => (x.serving > y.serving ? 1 : -1))
+        case 'preço':
+          return newList.sort((x, y) => (x.price > y.price ? 1 : -1))
+        default:
+          return newList
+      }
+    }
+
     const newList = recipes.filter(
       (recipe) =>
         filterByTag(recipe.category.id) && filterBySearch(recipe.title),
