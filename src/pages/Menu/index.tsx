@@ -3,6 +3,7 @@ import style from './Menu.module.scss'
 import { useState } from 'react'
 import Tags from '@/components/Tags'
 import Sort from '@/components/Sort'
+import Recipes from '@/components/Recipes'
 
 const Menu = () => {
   const [search, setSearch] = useState('')
@@ -14,8 +15,9 @@ const Menu = () => {
       <Search search={search} setSearch={setSearch} />
       <div className={style.menuWrapper__filters}>
         <Tags tagSelected={tagSelected} setTagSelected={setTagSelected} />
-        <Sort sort={sort} setSort={setSort}/>
+        <Sort sort={sort} setSort={setSort} />
       </div>
+      <Recipes search={search} sort={sort} tag={tagSelected} />
     </main>
   )
 }
