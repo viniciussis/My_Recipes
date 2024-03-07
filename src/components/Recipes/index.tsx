@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Recipe from './Recipe'
 import style from './Recipes.module.scss'
-import recipes from './itens.json'
+import recipes from '@/data/meals.json'
 
 interface RecipeProps {
   tag: null | number

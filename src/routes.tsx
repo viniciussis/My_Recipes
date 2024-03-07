@@ -2,20 +2,26 @@ import './main.scss'
 import './assets/styles/normalize.scss'
 import './assets/styles/reset.scss'
 import './assets/styles/typography.scss'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Menu from './pages/Menu'
+import Default from './components/Default'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Menu from './pages/Menu'
-import Banner from './components/Banner'
 
-const Routes = () => {
+const AppRoutes = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Banner />
-      <Menu />
+      <Routes>
+        <Route path="/" element={<Default />}>
+          <Route index element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+        </Route>
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
-export default Routes
+export default AppRoutes
