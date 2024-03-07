@@ -1,18 +1,44 @@
 .footer {
   background-color: $red;
   display: flex;
-  justify-content: flex-end;
-  padding: 10px $padding-horizontal;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem $padding-horizontal;
+
+  &__media {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      display: flex;
+    }
+  }
+
+  &__para {
+    color: white;
+    text-align: end;
+    font-size: 1.25rem;
+    font-weight: 600;
+    max-width: 50%;
+  }
 
   @media (max-width: $desktop_xsm) {
-    padding: 10px $padding-horizontal-mobile;
+    padding: 1rem $padding-horizontal-mobile;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__para{
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-    padding: 10px $padding-horizontal-sm;
+    padding: 1rem $padding-horizontal-sm;
   }
 
   @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-    padding: 10px $padding-horizontal-md;
+    padding: 1rem $padding-horizontal-md;
   }
 }

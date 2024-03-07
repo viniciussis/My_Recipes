@@ -1,14 +1,3 @@
-body {
-  min-height: 100vh;
-  box-sizing: border-box;
-  margin: 0;
-  background-color: $light-gray;
-}
-
-#root {
-  min-height: 100vh;
-}
-
 .container {
   padding: 50px $padding-horizontal;
 
@@ -23,10 +12,4 @@ body {
   @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
     padding: 50px $padding-horizontal-md;
   }
-}
-
-.title {
-  color: $dark;
-  font-size: 3rem;
-  margin-bottom: 30px;
 }

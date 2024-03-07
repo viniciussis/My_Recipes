@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import Banner from '../Banner'
+import style from './Default.module.scss'
 
 const Default = () => {
   return (
     <>
       <Banner />
-      <main>
+      <main className={style.container}>
         <Outlet />
       </main>
     </>

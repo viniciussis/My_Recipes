@@ -8,6 +8,8 @@ import Menu from './pages/Menu'
 import Default from './components/Default'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import NotFound from './pages/NotFound'
+import About from './pages/About'
 
 const AppRoutes = () => {
   return (
@@ -16,8 +18,10 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Default />}>
           <Route index element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="menu" element={<Menu />} />
+          <Route path="about" element={<About />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

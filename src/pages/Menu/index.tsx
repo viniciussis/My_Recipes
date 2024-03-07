@@ -10,7 +10,7 @@ const Menu = () => {
   const [tagSelected, setTagSelected] = useState<number | null>(null)
   const [sort, setSort] = useState('')
   return (
-    <main className={style.menuWrapper}>
+    <section className={style.menuWrapper}>
       <h3 className={style.menuWrapper__title}>Cardápio</h3>
       <Search search={search} setSearch={setSearch} />
       <div className={style.menuWrapper__filters}>
@@ -18,7 +18,7 @@ const Menu = () => {
         <Sort sort={sort} setSort={setSort} />
       </div>
       <Recipes search={search} sort={sort} tag={tagSelected} />
-    </main>
+    </section>
   )
 }
 
