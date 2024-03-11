@@ -10,6 +10,7 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: space-between;
+  margin-bottom: 2rem;
 
   &__meal {
     &__image {
@@ -42,7 +43,7 @@
 }
 
 
-.nossaCasa {
+.ourHouse {
   margin-bottom: 100px;
   position: relative;
   width: 100%;
@@ -52,7 +53,7 @@
     width: 100%;
   }
 
-  &__endereco {
+  &__address {
     align-items: center;
     background-color: $dark;
     border-radius: 5px;

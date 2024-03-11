@@ -10,6 +10,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
+import { Meal } from './pages/Meal'
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
           <Route path="menu" element={<Menu />} />
           <Route path="about" element={<About />} />
         </Route>
+        <Route path="meal/:id" element={<Meal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

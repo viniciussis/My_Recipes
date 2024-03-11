@@ -1,18 +1,13 @@
 import { IRecipe } from '@/interfaces/IRecipe'
 import style from './Recipe.module.scss'
-import classNames from 'classnames'
+import { TagsMeal } from '@/components/TagsMeal'
+import { useNavigate } from 'react-router-dom'
 
-const Recipe = ({
-  title,
-  description,
-  price,
-  serving,
-  size,
-  photo,
-  category,
-}: IRecipe) => {
+const Recipe = (props: IRecipe) => {
+  const { title, description, photo, id } = props
+  const navigate = useNavigate()
   return (
-    <div className={style.recipe}>
+    <div className={style.recipe} onClick={() => navigate(`/meal/${id}`)}>
       <div className={style.recipe__image}>
         <img src={photo} alt={title} />
       </div>
@@ -21,21 +16,7 @@ const Recipe = ({
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <div className={style.recipe__description__tags}>
-          <div
-            className={classNames(
-              style.tags__type,
-              style[`tags__type--${category.label.toLowerCase()}`]
-            )}
-          >
-            {category.label}
-          </div>
-          <div className={style.tags__portion}>{size}g</div>
-          <div className={style.tags__mealServing}>
-            Serve {serving == 1 ? serving + ' pessoa' : serving + ' pessoas'}
-          </div>
-          <div className={style.tags__price}>R$ {price.toFixed(2)}</div>
-        </div>
+        <TagsMeal {...props} />
       </div>
     </div>
   )
